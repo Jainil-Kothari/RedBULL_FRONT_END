@@ -1,0 +1,325 @@
+@font-face {
+    font-family: 'myana';
+    src: url('Analogist-Font/Analogist.ttf') format('truetype'),
+         url('Analogist-Font/Analogist.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+nav {
+    height: auto;
+    min-height: 80px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    flex-wrap: wrap;
+}
+
+nav h1 {
+    margin: 1rem;
+    text-transform: uppercase;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    opacity: 0.9;
+}
+
+nav h1 i {
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.nav2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav2 button {
+    background-color: transparent;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    padding: 0.5rem 1rem;
+    min-height: 44px;
+    width: auto;
+    min-width: 120px;
+    opacity: 1;
+    border-radius: 1.1rem;
+    transition: all ease 0.2s;
+}
+
+.nav2 button:hover {
+    cursor: pointer;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    border-radius: 0.5rem;
+}
+
+nav h4 {
+    text-transform: uppercase;
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+    opacity: 1;
+    transition: all ease 0.2s;
+}
+
+.center {
+    height: auto;
+    min-height: 80%;
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.center1 {
+    flex: 1;
+    min-width: 300px;
+    padding: 1rem;
+}
+
+.center2 {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.center1 h1 {
+    line-height: 1.2;
+    padding: 1rem;
+    font-family: "myana";
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+}
+
+.center1 p {
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.center button {
+    border: none;
+    margin: 1rem;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: 600;
+}
+
+.secbottom {
+    bottom: 0;
+    padding: 1rem;
+    position: relative;
+    height: auto;
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.secbottom img {
+    height: auto;
+    max-height: 70px;
+}
+
+.section2 {
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+}
+
+.section3 {
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(231, 9, 9, 0.397));
+}
+
+.section3 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.section2 .services {
+    height: auto;
+    min-height: 18%;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.services h3 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    background-color: #9AE975;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+.services p {
+    width: 100%;
+    max-width: 40vw;
+    font-family: 'myana';
+}
+
+.container {
+    height: auto;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.elem {
+    overflow: hidden;
+    border: 1px solid black;
+    height: auto;
+    min-height: 300px;
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 1rem;
+    transition: all ease 0.3s;
+    flex-wrap: wrap;
+}
+
+.elem1 {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.elem2 {
+    flex: 1;
+    min-width: 200px;
+}
+
+.elem2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.elem1 h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-family: "myana";
+    width: 100%;
+    padding: 0.5rem;
+    font-weight: 700;
+}
+
+.elem1 h4 {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    font-family: "myana";
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.black {
+    color: white;
+    background-color: #9AE975;
+}
+
+.container .elem:hover {
+    box-shadow: 10px 10px 20px black;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .section3 {
+        height: auto;
+        min-height: 35%;
+        width: 100%;
+        background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(231, 9, 9, 0.397));
+    }
+    .toverlay {
+        text-align: center;
+        font-size: 12px;
+        color: #000000;
+        margin-top: 20px;
+      }
+    .section3 img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav2 {
+        margin: 1rem auto;
+    }
+
+    .center {
+        flex-direction: column;
+    }
+
+    .services p {
+        max-width: 100%;
+    }
+
+    .elem {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav2 button {
+        width: 100%;
+    }
+
+    .secbottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
