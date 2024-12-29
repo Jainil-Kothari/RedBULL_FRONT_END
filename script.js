@@ -17,7 +17,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 preloader.style.display = 'none';
             }, 500);
             
-            
+            // Start your GSAP animations here
+            // Add your existing GSAP code below this line
+        }, 2000); // Wait for 2 seconds before hiding preloader
+    });
+});
+
 function pg1animation(){
     var tl=gsap.timeline();
 
@@ -146,6 +151,3 @@ button.addEventListener("mouseout",function(){
     }) 
 }
 )
-        }, 2000); // Wait for 2 seconds before hiding preloader
-    });
-});
