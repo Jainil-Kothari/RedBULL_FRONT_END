@@ -11,6 +11,163 @@
     font-family: gilroy;
 }
 
+/* Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-content {
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+.car-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.car {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 0;
+    bottom: 20px;
+    transform-origin: center;
+}
+
+.car-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #b41414;  /* Red Bull Racing blue */
+    clip-path: polygon(5% 100%, 15% 70%, 30% 40%, 70% 40%, 85% 70%, 95% 100%);
+    animation: carShake 0.2s infinite;
+}
+
+.wheel {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #d5c0c0;
+    border-radius: 50%;
+    bottom: -10px;
+    animation: wheelSpin 0.5s linear infinite;
+}
+
+.wheel1 { left: 15px; }
+.wheel2 { right: 15px; }
+
+.track {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    overflow: hidden;
+}
+
+.lines {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        #fff 0px,
+        #fff 50px,
+        transparent 50px,
+        transparent 100px
+    );
+    animation: trackMove 1s linear infinite;
+}
+
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #9AE975;
+    position: absolute;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: "myana", sans-serif;
+    font-size: 16px;
+}
+
+@keyframes carShake {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-1px); }
+}
+
+@keyframes wheelSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes trackMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Loading state */
+body.loading {
+    overflow: hidden;
+}
+
+/* Exit animation classes */
+.preloader.exit {
+    animation: exitPreloader 1s forwards;
+}
+
+.preloader.exit .car {
+    animation: carExit 1s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes exitPreloader {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { 
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes carExit {
+    0% { 
+        transform: translateX(0) scale(1); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translateX(200%) scale(0.5); 
+        opacity: 0;
+    }
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -23,7 +180,7 @@ body {
 }
 
 section {
-    height: 100%;
+    height: 110%;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -164,7 +321,6 @@ nav h4 {
 
 .section3 {
     height: auto;
-    min-height: 100%;
     width: 100%;
     background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(231, 9, 9, 0.397));
 }
@@ -284,7 +440,7 @@ nav h4 {
     .center button {
         border: none;
         margin: 0.4rem;
-        background-color: #000;
+        background-color: #000000;
         color: #fff;
         padding: 1rem;
         border-radius: 1.2rem;
@@ -300,6 +456,10 @@ nav h4 {
         font-family: "myana";
         font-size: clamp(1.5rem, 3.5vw, 3.5rem);
         text-align: center; /* Centers the heading */
+    }
+
+    .center p{
+        padding: 0 5rem;
     }
 
     .center2 {
@@ -393,12 +553,15 @@ nav h4 {
 
     .center1 h1 {
         line-height: 1.2;
-        padding: 1rem;
+        padding: 0.8rem;
         font-family: "myana";
         font-size: clamp(1.5rem, 3.5vw, 3.5rem);
         text-align: center; /* Centers the heading */
     }
 
+    .center p{
+        padding: 0 3rem;
+    }
     .center2 {
         flex: 1;
         min-width: 300px;
@@ -476,6 +639,19 @@ nav h4 {
 @media screen and (min-width: 128px) and (max-width: 480px) {
     .nav2 button {
         width: 100%;
+    }
+
+    .center1 h1 {
+        line-height: 1.2;
+        padding: 0.7rem;
+        font-family: "myana";
+        font-size: clamp(2rem, 3.5vw, 3.5rem);
+    }
+    
+    .center1 p {
+        font-size: clamp(1rem, 1.2vw, 1.2rem);
+        width: 100%;
+        padding: 0 1rem;
     }
 
     .center2 img {
