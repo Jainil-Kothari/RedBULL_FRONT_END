@@ -279,7 +279,7 @@ nav h4 {
 
 
 
-@media screen and (max-width: 908px) {
+  @media screen and (min-width: 670px) and (max-width: 908px) {
 
     .center button {
         border: none;
@@ -290,7 +290,8 @@ nav h4 {
         border-radius: 1.2rem;
         font-size: clamp(0.7rem, 1.5vw, 1.5rem);
         font-weight: 600;
-        margin-left: 35%;
+        display: block;
+        margin: 0.8rem auto; /* Centers the button */
     }
 
     .center1 h1 {
@@ -298,8 +299,9 @@ nav h4 {
         padding: 1rem;
         font-family: "myana";
         font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+        text-align: center; /* Centers the heading */
     }
-    
+
     .center2 {
         flex: 1;
         min-width: 300px;
@@ -307,46 +309,44 @@ nav h4 {
         justify-content: center;
         align-items: center;
     }
-    
+
     .center2 img {
-        max-width:60%;
+        max-width: 50%; /* Increased width for better visibility */
         height: auto;
         object-fit: contain;
     }
 
     .secbottom {
-        bottom: 0;
         padding: 1rem;
         position: relative;
         height: auto;
-        min-height: 60px; /* Reduced from 100px to give better spacing */
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center; /* Centers content */
         flex-wrap: wrap;
         gap: 1rem;
     }
-    
+
     .secbottom img {
-        max-height: 40px; /* Fixed height instead of auto */
-        width: auto; /* Maintain aspect ratio */
-        display: block; /* Ensure block display */
-        visibility: visible; /* Explicitly set visibility */
+        max-height: 40px;
+        width: auto;
+        display: block;
     }
+
     .section3 {
         height: auto;
-        min-height: 35%;
         width: 100%;
         background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(231, 9, 9, 0.397));
     }
+
     .toverlay {
         text-align: center;
         font-size: 12px;
         color: #000000;
-        margin-top: 20px;
-        margin-bottom: 10px;
-      }
+        margin: 20px 0;
+    }
+
     .section3 img {
         width: 100%;
         height: auto;
@@ -364,7 +364,6 @@ nav h4 {
 
     .center {
         flex-direction: column;
-        
     }
 
     .services p {
@@ -376,9 +375,113 @@ nav h4 {
     }
 }
 
-@media screen and (max-width: 480px) {
+
+  @media screen and (min-width: 480px) and (max-width: 670px) {
+
+    .center button {
+        border: none;
+        margin: 0.4rem;
+        background-color: #000;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 1.2rem;
+        font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+        font-weight: 600;
+        display: block;
+        margin: 0.8rem auto; /* Centers the button */
+    }
+
+    .center1 h1 {
+        line-height: 1.2;
+        padding: 1rem;
+        font-family: "myana";
+        font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+        text-align: center; /* Centers the heading */
+    }
+
+    .center2 {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .center2 img {
+        max-width: 65%; /* Increased width for better visibility */
+        height: auto;
+        object-fit: contain;
+    }
+
+    .secbottom {
+        padding: 1rem;
+        position: relative;
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centers content */
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .secbottom img {
+        max-height: 40px;
+        width: auto;
+        display: block;
+    }
+
+    .section3 {
+        height: auto;
+        width: 100%;
+        background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(231, 9, 9, 0.397));
+    }
+
+    .toverlay {
+        text-align: center;
+        font-size: 12px;
+        color: #000000;
+        margin: 20px 0;
+    }
+
+    .section3 img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav2 {
+        margin: 1rem auto;
+    }
+
+    .center {
+        flex-direction: column;
+    }
+
+    .services p {
+        max-width: 100%;
+    }
+
+    .elem {
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (min-width: 128px) and (max-width: 480px) {
     .nav2 button {
         width: 100%;
+    }
+
+    .center2 img {
+        max-width: 65%; /* Increased width for better visibility */
+        height: auto;
+        object-fit: contain;
     }
 
     .secbottom {
