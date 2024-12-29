@@ -91,7 +91,6 @@ tl2.from(".secbottom img",{
 })
 }
 
-pg1animation();
 
 function pg2animation(){
     var tl1=gsap.timeline({
@@ -150,7 +149,6 @@ function pg2animation(){
     },"eksath2")
 }
 
-pg2animation();
 
 var button=document.querySelector(".center button")
 
