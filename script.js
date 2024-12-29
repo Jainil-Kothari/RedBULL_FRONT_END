@@ -1,43 +1,23 @@
+// Add this to your script.js
 document.addEventListener("DOMContentLoaded", function() {
-    const preloader = document.querySelector('.preloader');
-    const progressBar = document.querySelector('.progress-bar');
-    const progressText = document.querySelector('.progress-text');
-    let progress = 0;
-    
     // Add loading class to body
     document.body.classList.add('loading');
     
-    // Simulate loading progress
-    const interval = setInterval(() => {
-        progress += Math.random() * 30;
-        if (progress > 100) progress = 100;
-        
-        progressBar.style.width = `${progress}%`;
-        progressText.textContent = `${Math.round(progress)}%`;
-        
-        if (progress === 100) {
-            clearInterval(interval);
-            setTimeout(completeLoading, 500);
-        }
-    }, 500);
+    // Get the preloader element
+    const preloader = document.querySelector('.preloader');
     
-    // Complete loading function
-    function completeLoading() {
-        preloader.classList.add('exit');
-        
+    // Hide preloader after page loads
+    window.addEventListener('load', function() {
         setTimeout(() => {
+            preloader.classList.add('hide');
             document.body.classList.remove('loading');
-            preloader.style.display = 'none';
             
-            // Start page animations
-            pg1animation();
-            pg2animation();
-        }, 1000);
-    }
-});
-
-
-
+            // Remove preloader from DOM after animation
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+            
+            
 function pg1animation(){
     var tl=gsap.timeline();
 
@@ -91,6 +71,7 @@ tl2.from(".secbottom img",{
 })
 }
 
+pg1animation();
 
 function pg2animation(){
     var tl1=gsap.timeline({
@@ -149,6 +130,7 @@ function pg2animation(){
     },"eksath2")
 }
 
+pg2animation();
 
 var button=document.querySelector(".center button")
 
@@ -164,3 +146,6 @@ button.addEventListener("mouseout",function(){
     }) 
 }
 )
+        }, 2000); // Wait for 2 seconds before hiding preloader
+    });
+});
