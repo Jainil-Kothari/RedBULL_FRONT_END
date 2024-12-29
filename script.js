@@ -1,3 +1,43 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const preloader = document.querySelector('.preloader');
+    const progressBar = document.querySelector('.progress-bar');
+    const progressText = document.querySelector('.progress-text');
+    let progress = 0;
+    
+    // Add loading class to body
+    document.body.classList.add('loading');
+    
+    // Simulate loading progress
+    const interval = setInterval(() => {
+        progress += Math.random() * 30;
+        if (progress > 100) progress = 100;
+        
+        progressBar.style.width = `${progress}%`;
+        progressText.textContent = `${Math.round(progress)}%`;
+        
+        if (progress === 100) {
+            clearInterval(interval);
+            setTimeout(completeLoading, 500);
+        }
+    }, 500);
+    
+    // Complete loading function
+    function completeLoading() {
+        preloader.classList.add('exit');
+        
+        setTimeout(() => {
+            document.body.classList.remove('loading');
+            preloader.style.display = 'none';
+            
+            // Start page animations
+            pg1animation();
+            pg2animation();
+        }, 1000);
+    }
+});
+
+
+
 function pg1animation(){
     var tl=gsap.timeline();
 
